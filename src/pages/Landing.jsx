@@ -4,38 +4,41 @@ import img1 from "../assets/micro-course.jpg";
 import img2 from "../assets/expert-course.jpg";
 import img3 from "../assets/community-building-mastery.jpg";
 import img4 from "../assets/global-groove.jpg";
+import img5 from "../assets/DesigningUI_UXmain.jpg";
+import img6 from "../assets/funding-your-startup.jpg";
 import { TimerIcon, ArrowRight, DollarSign } from "lucide-react";
+
 const Landing = () => {
   return (
-    <>
+    <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className=" bg-gray-600 flex items-center">
-        <span className="absolute text-white w-[40rem] font-bold p-20 ">
-          <h2 className="text-5xl mb-10 ">
-            Commitment to your Carrier Development
+      <section className="relative bg-gray-600 flex items-center min-h-[80vh]">
+        <span className="absolute text-white max-w-xl font-bold px-6 md:px-20 py-10">
+          <h2 className="text-4xl md:text-5xl mb-8">
+            Commitment to your Career Development
           </h2>
-          <p className="text-2xl font-light mb-5">
-            Do you need some counsel about your carrier growth or transition ?
-            Book a session with our Dedicatedcarrier coaches to support your
-            journey
+          <p className="text-xl md:text-2xl font-light mb-5">
+            Do you need some counsel about your career growth or transition?
+            Book a session with our dedicated career coaches to support your
+            journey.
           </p>
           <button className="bg-white px-8 py-2 text-[#008f96] rounded-xl">
             Get started
           </button>
         </span>
-
         <img
           src={bg1}
           alt="bg1"
-          className="mix-blend-overlay flex items-end justify-end b"
+          className="w-full h-full object-cover mix-blend-overlay"
         />
       </section>
+
       {/* Courses */}
-      <section className="w-6xl auto  pt-30">
-        <h2 className="font-bold text-[#4c6288] text-4xl pb-5 uppercase ">
+      <section className="max-w-7xl mx-auto pt-16 px-4">
+        <h2 className="font-bold text-[#4c6288] text-4xl pb-5 uppercase">
           Our Offerings
         </h2>
-        <div className="flex  justify-between gap-4 flex-row">
+        <div className="flex flex-col md:flex-row justify-between gap-8">
           <Cards
             image={img1}
             name={"Micro Courses"}
@@ -43,7 +46,7 @@ const Landing = () => {
             icon1={
               <ArrowRight
                 size={30}
-                className="mb-10 flex justify-self-end border-2 rounded-full p-1"
+                className="mb-6 ml-auto border-2 rounded-full p-1"
               />
             }
           />
@@ -54,50 +57,173 @@ const Landing = () => {
             icon1={
               <ArrowRight
                 size={30}
-                className="mb-10 flex justify-self-end border-2 rounded-full p-1 "
+                className="mb-6 ml-auto border-2 rounded-full p-1"
               />
             }
           />
         </div>
       </section>
+
       {/* Top courses */}
-      <section className="bg-[#2A264E] flex p-30 mt-10  ">
-        <span>
-          <h2 className="text-3xl font-bold w-2xs text-white">
+      <section className="bg-[#2A264E] mt-16 py-16 px-4 lg:px-20 overflow-x-hidden">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-10">
+          <h2 className="text-3xl font-bold text-white mb-4 lg:mb-0">
             Top Experts-Led Courses
           </h2>
-          <a href="#">View All</a>
-        </span>
-        <div className="flex gap-5 ">
-          <Cards
-            image={img3}
-            name={"Global Groove"}
-            type={"Strategies for success with Johnny Drille"}
-            content={
-              "Join Johnny Drille ,the Nigerian singer-songwriter ,as he reveals the secrets to building an unforgetttable global music brand .Master the art of music branding and gain the tools to captivate fans worldwide."
-            }
-            txt1={"4weeks"}
-            icon2={<TimerIcon />}
-            txt2={"N50,000"}
-            icon3={<DollarSign />}
-          />
-          <Cards
-            image={img4}
-            name={"Global Groove"}
-            type={"Strategies for success with Johnny Drille"}
-            content={
-              "Join Johnny Drille ,the Nigerian singer-songwriter ,as he reveals the secrets to building an unforgetttable global music brand .Master the art of music branding and gain the tools to captivate fans worldwide."
-            }
-            txt1={"4weeks"}
-            icon2={<TimerIcon />}
-            txt2={"N50,000"}
-            icon3={<DollarSign />}
-          />
+          <a href="#" className="text-white underline underline-offset-4">
+            View All
+          </a>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img3}
+              name={"Global Groove"}
+              type={"Strategies for success with Johnny Drille"}
+              content={
+                "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+              }
+              txt1={"4 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N50,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img4}
+              name={"Global Groove"}
+              type={"Strategies for success with Johnny Drille"}
+              content={
+                "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+              }
+              txt1={"4 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N50,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img5}
+              name={"Community Mastery"}
+              type={"Grow your career via local influence"}
+              content={
+                "Learn the art of community building and create lasting impact in your space. Empower yourself with influence strategies that work."
+              }
+              txt1={"6 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N65,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
         </div>
       </section>
-    </>
+
+      {/* Why Us */}
+      <section className="max-w-7xl mx-auto pt-16 px-4">
+        <h2 className="text-5xl font-bold text-[#4c6288] mb-8 p-7">
+          Why Graceland?
+        </h2>
+        <div className="flex flex-col lg:flex-row gap-10 p-7">
+          <div className="w-full lg:w-[54] bg-[#18B172] rounded-2xl">
+            <Cards
+              name={
+                <h3 className="text-3xl md:text-4xl text-white p-6">
+                  Climb Your Career Ladder Like A Pro
+                </h3>
+              }
+              content={
+                <p className="p-6 text-xl text-white">
+                  Increase your employability by 70% with Graceland Proficiency
+                  Courses. Optimize your career with HARDE Proficiency Courses.
+                </p>
+              }
+              link={<p className="p-6">Explore Courses</p>}
+            />
+          </div>
+
+          <div className="w-full lg:w-[55rem] bg-[#FF5C5C] rounded-2xl">
+            <Cards
+              name={
+                <h3 className="text-3xl md:text-4xl text-white p-6">
+                  Schedule A Free Career Session
+                </h3>
+              }
+              content={
+                <p className="p-6 text-xl text-white">
+                  At HARDE, we guide you through the critical journey that
+                  connects you from where you are to where you need to be. Speak
+                  with one of our seasoned Career Coaches today
+                </p>
+              }
+              link={<p className="p-6">Explore Courses</p>}
+            />
+          </div>
+        </div>
+      </section>
+      {/* Top Micro Courses */}
+      <section className="bg-[#2A264E] mt-16 py-16 px-4 lg:px-20 overflow-x-hidden">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-10">
+          <h2 className="text-3xl font-bold text-white mb-4 lg:mb-0">
+            Top Micro Courses
+          </h2>
+          <a href="#" className="text-white underline underline-offset-4">
+            View All
+          </a>
+        </div>
+
+        {/* Top Micro Courses*/}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img3}
+              name={"Critical Thinking and Problem Solving"}
+              type={"Making a Habit of Superior Thinking"}
+              content={
+                "Effective problem-solving relies on the ability to analyse topics and situations based on available facts and information."
+              }
+              txt1={"4 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N50,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img4}
+              name={"Design Thinking"}
+              type={"Creating Innovative Solutions to Problems"}
+              content={
+                "The design thinking approach is a sure-proof approach to creatively solving complex problems."
+              }
+              txt1={"4 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N50,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
+          <div className="bg-gray-200 rounded-2xl">
+            <Cards
+              image={img6}
+              name={"Funding Your Startup"}
+              type={
+                "The Startup Founder's Blueprint - Turning Dreams to Dollars"
+              }
+              content={
+                "Startup Funding might be just the opportunity your idea needs to go from good to great."
+              }
+              txt1={"6 weeks"}
+              icon2={<TimerIcon />}
+              txt2={"N65,000"}
+              icon3={<DollarSign />}
+            />
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
 export default Landing;
-//#2A264E
