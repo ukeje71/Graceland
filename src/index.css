@@ -1,0 +1,10 @@
+@import "tailwindcss";
+html{
+    scroll-behavior: smooth;
+}
+.btns:hover{
+    background-color:#4c6288;
+}
+.auto{
+    margin: 0 auto;
+}
