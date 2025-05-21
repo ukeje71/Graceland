@@ -6,7 +6,11 @@ import img3 from "../assets/community-building-mastery.jpg";
 import img4 from "../assets/global-groove.jpg";
 import img5 from "../assets/DesigningUI_UXmain.jpg";
 import img6 from "../assets/funding-your-startup.jpg";
-import { TimerIcon, ArrowRight, DollarSign } from "lucide-react";
+import { TimerIcon, ArrowRight, DollarSign, Star } from "lucide-react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Navigation, Pagination } from "swiper/modules";
 
 const Landing = () => {
   return (
@@ -75,50 +79,115 @@ const Landing = () => {
           </a>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img3}
-              name={"Global Groove"}
-              type={"Strategies for success with Johnny Drille"}
-              content={
-                "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
-              }
-              txt1={"4 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N50,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img4}
-              name={"Global Groove"}
-              type={"Strategies for success with Johnny Drille"}
-              content={
-                "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
-              }
-              txt1={"4 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N50,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img5}
-              name={"Community Mastery"}
-              type={"Grow your career via local influence"}
-              content={
-                "Learn the art of community building and create lasting impact in your space. Empower yourself with influence strategies that work."
-              }
-              txt1={"6 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N65,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-        </div>
+        {/* 🚫 Do NOT wrap Swiper in grid */}
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          navigation
+        >
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img3}
+                name={"Global Groove"}
+                type={"Strategies for success with Johnny Drille"}
+                content={
+                  "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl  h-130">
+              <Cards
+                image={img4}
+                name={"Global Groove"}
+                type={"Strategies for success with Johnny Drille"}
+                content={
+                  "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl  h-130">
+              <Cards
+                image={img5}
+                name={"Community Mastery"}
+                type={"Grow your career via local influence"}
+                content={
+                  "Learn the art of community building and create lasting impact in your space. Empower yourself with influence strategies that work."
+                }
+                txt1={"6 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N65,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl  h-130">
+              <Cards
+                image={img3}
+                name={"Global Groove"}
+                type={"Strategies for success with Johnny Drille"}
+                content={
+                  "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl  h-130">
+              <Cards
+                image={img4}
+                name={"Global Groove"}
+                type={"Strategies for success with Johnny Drille"}
+                content={
+                  "Join Johnny Drille, the Nigerian singer-songwriter, as he reveals the secrets to building an unforgettable global music brand. Master the art of music branding and gain the tools to captivate fans worldwide."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl  h-130">
+              <Cards
+                image={img5}
+                name={"Community Mastery"}
+                type={"Grow your career via local influence"}
+                content={
+                  "Learn the art of community building and create lasting impact in your space. Empower yourself with influence strategies that work."
+                }
+                txt1={"6 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N65,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
 
       {/* Why Us */}
@@ -175,52 +244,415 @@ const Landing = () => {
         </div>
 
         {/* Top Micro Courses*/}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img3}
-              name={"Critical Thinking and Problem Solving"}
-              type={"Making a Habit of Superior Thinking"}
-              content={
-                "Effective problem-solving relies on the ability to analyse topics and situations based on available facts and information."
-              }
-              txt1={"4 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N50,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img4}
-              name={"Design Thinking"}
-              type={"Creating Innovative Solutions to Problems"}
-              content={
-                "The design thinking approach is a sure-proof approach to creatively solving complex problems."
-              }
-              txt1={"4 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N50,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-          <div className="bg-gray-200 rounded-2xl">
-            <Cards
-              image={img6}
-              name={"Funding Your Startup"}
-              type={
-                "The Startup Founder's Blueprint - Turning Dreams to Dollars"
-              }
-              content={
-                "Startup Funding might be just the opportunity your idea needs to go from good to great."
-              }
-              txt1={"6 weeks"}
-              icon2={<TimerIcon />}
-              txt2={"N65,000"}
-              icon3={<DollarSign />}
-            />
-          </div>
-        </div>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          navigation
+        >
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img3}
+                name={"Critical Thinking and Problem Solving"}
+                type={"Making a Habit of Superior Thinking"}
+                content={
+                  "Effective problem-solving relies on the ability to analyse topics and situations based on available facts and information."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img4}
+                name={"Design Thinking"}
+                type={"Creating Innovative Solutions to Problems"}
+                content={
+                  "The design thinking approach is a sure-proof approach to creatively solving complex problems."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img6}
+                name={"Funding Your Startup"}
+                type={
+                  "The Startup Founder's Blueprint - Turning Dreams to Dollars"
+                }
+                content={
+                  "Startup Funding might be just the opportunity your idea needs to go from good to great."
+                }
+                txt1={"6 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N65,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img3}
+                name={"Critical Thinking and Problem Solving"}
+                type={"Making a Habit of Superior Thinking"}
+                content={
+                  "Effective problem-solving relies on the ability to analyse topics and situations based on available facts and information."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img4}
+                name={"Design Thinking"}
+                type={"Creating Innovative Solutions to Problems"}
+                content={
+                  "The design thinking approach is a sure-proof approach to creatively solving complex problems."
+                }
+                txt1={"4 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N50,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-gray-200 rounded-2xl h-130">
+              <Cards
+                image={img6}
+                name={"Funding Your Startup"}
+                type={
+                  "The Startup Founder's Blueprint - Turning Dreams to Dollars"
+                }
+                content={
+                  "Startup Funding might be just the opportunity your idea needs to go from good to great."
+                }
+                txt1={"6 weeks"}
+                icon2={<TimerIcon />}
+                txt2={"N65,000"}
+                icon3={<DollarSign />}
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
+      </section>
+      {/* Testimonies */}
+      <section className="pt-20 bg-[#0E0E2C]  py-16 px-4 lg:px-20 overflow-x-hidden">
+        <h2 className="text-5xl font-bold text-white mb-15">What Learners say</h2>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={1}
+          breakpoints={{
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+          pagination={{ clickable: true }}
+          navigation
+        >
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            <div className="bg-white rounded-2xl h-95 ">
+              <Cards
+                name={<p className="text-black"> "</p>}
+                content={
+                  <p className=" text-black">
+                    My experience has been nothing short of transformative. The
+                    Product Management course challenged me in the best way
+                    possible, pushing me to think strategically and apply
+                    practical skills that are immediately relevant in the
+                    industry.
+                  </p>
+                }
+                pic1={"DI"}
+                user={"Divine Isreal"}
+                pic2={
+                  <p className="flex flex-row justify-between">
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                    <Star
+                      size={15}
+                      color="#008F96"
+                      fill="#008F96"
+                      className="border-[#008F96]"
+                    />
+                  </p>
+                }
+              />
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
     </div>
   );
