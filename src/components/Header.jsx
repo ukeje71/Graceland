@@ -20,11 +20,11 @@ const Header = () => {
         </ul>
         <span className="flex gap-10 items-center">
           <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
-          <ShoppingCart size={300} className="h-8 w-6" />
-          <button className="btns border-2 border-gray-400 text-gray-400 px-6 py-3 rounded-[10px] w-[10rem]">
+          <ShoppingCart size={30}  />
+          <button className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
             Sign In
           </button>
-          <button className="btns bg-[#008f96] px-6 py-3 rounded-[10px] text-white w-[10rem]">
+          <button className="btns bg-[#008f96] px-1 py-2 rounded-[10px] text-white w-[9rem]">
             Get Started
           </button>
           <img src={trasfer} alt="mastercard" width={80} />

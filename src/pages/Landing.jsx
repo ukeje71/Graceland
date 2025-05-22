@@ -6,6 +6,7 @@ import img3 from "../assets/community-building-mastery.jpg";
 import img4 from "../assets/global-groove.jpg";
 import img5 from "../assets/DesigningUI_UXmain.jpg";
 import img6 from "../assets/funding-your-startup.jpg";
+import img7 from "../assets/qahe.jpg";
 import { TimerIcon, ArrowRight, DollarSign, Star } from "lucide-react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -206,7 +207,8 @@ const Landing = () => {
               content={
                 <p className="p-6 text-xl text-white">
                   Increase your employability by 70% with Graceland Proficiency
-                  Courses. Optimize your career with HARDE Proficiency Courses.
+                  Courses. Optimize your career with Graceland Proficiency
+                  Courses.
                 </p>
               }
               link={<p className="p-6">Explore Courses</p>}
@@ -222,7 +224,7 @@ const Landing = () => {
               }
               content={
                 <p className="p-6 text-xl text-white">
-                  At HARDE, we guide you through the critical journey that
+                  At Graceland, we guide you through the critical journey that
                   connects you from where you are to where you need to be. Speak
                   with one of our seasoned Career Coaches today
                 </p>
@@ -359,7 +361,9 @@ const Landing = () => {
       </section>
       {/* Testimonies */}
       <section className="pt-20 bg-[#0E0E2C]  py-16 px-4 lg:px-20 overflow-x-hidden">
-        <h2 className="text-5xl font-bold text-white mb-15">What Learners say</h2>
+        <h2 className="text-5xl font-bold text-white mb-15">
+          What Learners say
+        </h2>
         <Swiper
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={30}
@@ -653,6 +657,26 @@ const Landing = () => {
             </div>
           </SwiperSlide>
         </Swiper>
+      </section>
+      {/* Sponsors */}
+      <section className="mt-20 bg-[#008F96]  py-16 px-4 lg:px-20 overflow-x-hidden m-16 rounded-2xl text-white flex flex-row items-center gap-10">
+        <div>
+          <h2 className="text-2xl mb-4 font-bold">Accredicted By</h2>
+          <p className="w-90 ">
+            Graceland Business School is accredited by QAHE. QAHE is a
+            non-governmental, independent quality assurance agency in education
+            and training, which is recognised by National Agency for Quality
+            Assurance in Education & Research (Moldova), Agency for
+            Accreditation of Educational Programs & Organizations (Kyrgyzstan),
+            Council on International Higher Education Supervision (Austria), The
+            Accreditation Council for Education, Indonesia (ACE), Higher
+            Education Council (HEC), Syria, The Directorate for Research,
+            Planning, and Funding, Republic of Macedonia.
+          </p>
+        </div>
+        <div className="p-10 bg-white w-300 flex flex-col justify-center items-center rounded-3xl ">
+          <img src={img7} alt="Brand-logo" width={200} />
+        </div>
       </section>
     </div>
   );
