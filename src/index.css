@@ -8,9 +8,7 @@ body {
 .btns {
   transition: 0.2s ease;
 }
-.btns:hover {
-  background-color: #4c6288;
-}
+
 .auto {
   margin: 0 auto;
 }
@@ -26,4 +24,11 @@ body {
 }
 a.active{
   color:Black;
+}
+h1, h2, h3, button {
+  font-family: 'Poppins', sans-serif;
+}
+.btns:hover{
+background-color: #006f76;
+color: white;
 }

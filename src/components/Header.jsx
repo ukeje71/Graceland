@@ -1,5 +1,5 @@
 import logo from "../assets/logo-bs.png";
-import { Phone, ShoppingCart } from "lucide-react";
+// import { Phone, ShoppingCart } from "lucide-react";
 import trasfer from "../assets/mastercard.png";
 import { NavLink, useNavigate } from "react-router";
 
@@ -23,12 +23,12 @@ const Header = () => {
           </li>
         </ul>
         <span className="flex gap-10 items-center">
-          <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
-          <ShoppingCart size={30} />
+          {/* <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
+          <ShoppingCart size={30} /> */}
           <button onClick={() => navigate("/Login")} className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
             Sign In
           </button>
-          <button onClick={() => navigate("/Login")} className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
+          <button onClick={() => navigate("/create")} className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
             Get Started
           </button>
           <img src={trasfer} alt="mastercard" width={80} />

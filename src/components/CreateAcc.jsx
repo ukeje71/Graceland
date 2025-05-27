@@ -1,28 +1,14 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { FacebookIcon } from "lucide-react";
-import React, { useState } from "react";
-import { auth } from "./Firebase";
 import { Link } from "react-router";
-const Login = () => {
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-    } catch (error) {
-      console(error.message);
-    }
-  };
+const CreateAcc = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen ">
       <div className="bg-gradient-to-br from-[#f0fdfd] via-[#dff5f6] to-[#b5e0e3] w-120 p-15 h-160 rounded-xl shadow-md">
         <h1 className="text-4xl font-bold text-center mt-5 text-black">
-          LogIn
+          Create Account
         </h1>
-        <form action="#" className="text-black text-xl" onSubmit={handleSubmit}>
+        <form action="#" className="text-black text-xl">
           <fieldset className="flex flex-col gap-4">
             <label htmlFor="username" className="text-2xl mt-8">
               Username
@@ -32,7 +18,6 @@ const Login = () => {
               placeholder="Username Or Email"
               id="username"
               className="outline-none border-2 rounded-lg p-2"
-              onChange={(e) => setEmail(e.target.value)}
             />
           </fieldset>
           <fieldset className="flex flex-col gap-4">
@@ -44,7 +29,6 @@ const Login = () => {
               placeholder="Password"
               id="Password"
               className="outline-none border-2 rounded-lg p-2"
-              onChange={(e) => setPassword(e.target.value)}
             />
           </fieldset>
           <button className="btns mt-10 w-full p-3 rounded-2xl bg-[#008f96] text-white m-[0 auto]">
@@ -61,9 +45,9 @@ const Login = () => {
             <p>Facebook</p>
           </span>
         </div>
-        <Link to={"/create"}>
+        <Link to={"/Login"}>
           <p className="pt-6 text-center decoration-blue-400 underline text-blue-500">
-            Don`t have an account ? Sign up
+            Already have an account ? Sign up
           </p>
         </Link>
       </div>
@@ -71,4 +55,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateAcc;

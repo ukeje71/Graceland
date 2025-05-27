@@ -1,12 +1,56 @@
-# React + Vite
+# 🌐 Graceland Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Graceland is a modern, responsive e-commerce and service-based website designed to provide users with a seamless experience navigating products, services, and information. It features authentication, routing, responsive layout, and clean UI, aimed at showcasing frontend development skills.
 
-Currently, two official plugins are available:
+## 📌 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Clean and responsive landing page
+- ✅ Authentication system using Firebase
+- ✅ Routing with React Router
+- ✅ Dynamic UI with Tailwind CSS
+- ✅ Context-based Theme Toggler (Light/Dark Mode)
+- ✅ Reusable components (Header, Footer, Buttons)
+- ✅ Hosted online via Vercel
 
-## Expanding the ESLint configuration
+## 🧪 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Technology        | Purpose                                 |
+| ----------------- | --------------------------------------- |
+| **React.js**      | JavaScript library for building UI      |
+| **Tailwind CSS**  | Utility-first CSS framework for styling |
+| **Firebase Auth** | User authentication                     |
+| **React Router**  | Routing and navigation                  |
+| **Lucide React**  | Icon library                            |
+| **Git & GitHub**  | Version control and remote repository   |
+| **Vercel**        | Deployment and hosting                  |
+| **VS Code**       | Code editor                             |
+
+## 🚀 Project Structure
+
+src/
+├── assets/ # Images and media
+├── components/ # Reusable components (Header, Footer, etc.)
+├── pages/ # Page-level components (Landing, etc.)
+├── App.jsx # Main application with routes
+├── index.css # Global styles
+└── main.jsx # React entry point
+
+## 🔐 Authentication with Firebase
+
+Firebase Authentication is used to handle user login and sign-up securely.  
+It provides:
+
+- Email/password login
+- Secure Firebase config via `.env`
+- Protected routes and redirection
+
+## 🧑‍💻 Developer Guide
+
+### Getting Started
+
+1. **Clone the Repository**
+
+```bash
+git clone https://github.com/yourusername/graceland.git
+cd graceland
+```
