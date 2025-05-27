@@ -197,7 +197,7 @@ const Landing = () => {
           Why Graceland?
         </h2>
         <div className="flex flex-col lg:flex-row gap-10 p-7 h-110">
-          <div className="w-full lg:w-[54] bg-[#18B172] rounded-2xl">
+          <div className="w-350 bg-[#18B172] rounded-2xl">
             <Cards
               name={
                 <h3 className="text-3xl md:text-4xl text-white p-6">
@@ -215,7 +215,7 @@ const Landing = () => {
             />
           </div>
 
-          <div className="w-full lg:w-[55rem] bg-[#FF5C5C] rounded-2xl">
+          <div className="w-250 bg-[#FF5C5C] rounded-2xl">
             <Cards
               name={
                 <h3 className="text-3xl md:text-4xl text-white p-6">
