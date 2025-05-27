@@ -12,8 +12,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Navigation, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router";
 
 const Landing = () => {
+
+  const navigate = useNavigate();
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
@@ -27,7 +30,7 @@ const Landing = () => {
             Book a session with our dedicated career coaches to support your
             journey.
           </p>
-          <button className="bg-white px-8 py-2 text-[#008f96] rounded-xl">
+          <button onClick={() => navigate("/Login ")}className="bg-white px-8 py-2 text-[#008f96] rounded-xl">
             Get started
           </button>
         </span>
@@ -196,7 +199,7 @@ const Landing = () => {
         <h2 className="text-5xl font-bold text-[#4c6288] mb-8 p-7">
           Why Graceland?
         </h2>
-        <div className="flex flex-col lg:flex-row gap-10 p-7 h-110">
+        <div className="flex flex-col lg:flex-row gap-10 p-7 h-115">
           <div className="w-350 bg-[#18B172] rounded-2xl">
             <Cards
               name={
