@@ -35,3 +35,6 @@ button {
   background-color: #006f76;
   color: white;
 }
+input:user-invalid {
+  border: 2px solid red;
+}

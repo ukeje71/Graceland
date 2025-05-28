@@ -1,6 +1,10 @@
 import { FacebookIcon } from "lucide-react";
 import { Link } from "react-router";
 import { useState } from "react";
+import { auth, db } from "./Firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const CreateAcc = () => {
   const [Fname, setFname] = useState("");
@@ -8,18 +12,44 @@ const CreateAcc = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log(user);
+      console.log("User Successfully Created");
+      toast.success("User Successfully Created");
+      if (user) {
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          firstname: Fname,
+          lastname: Lname,
+          password: password,
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred from your end");
+      console.log(error.message);
+    }
+  };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-white p-4">
       <div className=" bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-2xl overflow-auto max-h-screen">
         <h1 className="text-3xl font-bold text-center mb-6 text-white">
           Create Account
         </h1>
-        <form className="text-white text-base space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="text-white text-base space-y-4"
+        >
           <fieldset className="flex flex-col">
             <label htmlFor="firstname" className="text-lg  font-extrabold">
               First Name
             </label>
             <input
+              required
               type="text"
               id="firstname"
               placeholder="First Name"
@@ -34,6 +64,7 @@ const CreateAcc = () => {
               Last Name
             </label>
             <input
+              required
               type="text"
               id="lastname"
               placeholder="Last Name"
@@ -48,6 +79,7 @@ const CreateAcc = () => {
               Email
             </label>
             <input
+              required
               type="email"
               id="email"
               placeholder="Email"
@@ -62,6 +94,7 @@ const CreateAcc = () => {
               Password
             </label>
             <input
+              required
               type="password"
               id="password"
               placeholder="Password"

@@ -20,9 +20,9 @@ const Landing = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero */}
-      <section className=" relative bg-gray-600 flex items-center min-h-[80vh]">
+      <section className=" relative bg-gray-600 flex items-center md:min-h-[80vh]">
         <span className="absolute text-white max-w-xl font-bold px-6 md:px-20 py-10">
-          <h2 className="text-4xl md:text-5xl mb-8">
+          <h2 className="text-2xl sm:text-2xl md:text-4xl md:mb-8">
             Commitment to your Career Development
           </h2>
           <p className="text-xl md:text-2xl font-light mb-5">
@@ -46,7 +46,7 @@ const Landing = () => {
         <h2 className="font-bold text-[#4c6288] text-4xl pb-5 uppercase">
           Our Offerings
         </h2>
-        <div className="flex flex-col md:flex-row justify-between gap-8">
+        <div className="flex flex-col  md:flex-row justify-between gap-8">
           <Cards
             image={img1}
             name={"Micro Courses"}
@@ -196,11 +196,11 @@ const Landing = () => {
 
       {/* Why Us */}
       <section className="max-w-7xl mx-auto pt-16 px-4">
-        <h2 className="text-5xl font-bold text-[#4c6288] mb-8 p-7">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#4c6288] mb-8 p-7">
           Why Graceland?
         </h2>
-        <div className="flex flex-col lg:flex-row gap-10 p-7 h-115">
-          <div className="w-350 bg-[#18B172] rounded-2xl">
+        <div className="flex flex-col lg:flex-row gap-10 md:p-7 h-full md:h-115">
+          <div className="h-100 md:w-350 bg-[#18B172] rounded-2xl">
             <Cards
               name={
                 <h3 className="text-3xl md:text-4xl text-white p-6">
@@ -208,31 +208,31 @@ const Landing = () => {
                 </h3>
               }
               content={
-                <p className="p-6 text-xl text-white">
+                <p className="p-2 md:p-6 text-xl text-white">
                   Increase your employability by 70% with Graceland Proficiency
                   Courses. Optimize your career with Graceland Proficiency
                   Courses.
                 </p>
               }
-              link={<p className="p-6">Explore Courses</p>}
+              link={<p className="p-2">Explore Courses</p>}
             />
           </div>
 
-          <div className="w-250 bg-[#FF5C5C] rounded-2xl">
+          <div className="h-100 md:w-250 bg-[#FF5C5C] rounded-2xl">
             <Cards
               name={
-                <h3 className="text-3xl md:text-4xl text-white p-6">
+                <h3 className="text-3xl md:text-4xl text-white  p-6">
                   Schedule A Free Career Session
                 </h3>
               }
               content={
-                <p className="p-6 text-xl text-white">
+                <p className="p-2 md:p-6text-xl text-white">
                   At Graceland, we guide you through the critical journey that
                   connects you from where you are to where you need to be. Speak
                   with one of our seasoned Career Coaches today
                 </p>
               }
-              link={<p className="p-6">Explore Courses</p>}
+              link={<p className="p-2">Explore Courses</p>}
             />
           </div>
         </div>
@@ -662,7 +662,7 @@ const Landing = () => {
         </Swiper>
       </section>
       {/* Sponsors */}
-      <section className="mt-20 bg-[#008F96]  py-16 px-4 lg:px-20 overflow-x-hidden m-16 rounded-2xl text-white flex flex-row items-center gap-10">
+      <section className="mt-20 bg-[#008F96]  w-full py-16 px-4 lg:px-20 overflow-x-hidden m-16 rounded-2xl text-white flex flex-col md:flex-row items-center gap-10">
         <div>
           <h2 className="text-2xl mb-4 font-bold">Accredicted By</h2>
           <p className="w-90 ">

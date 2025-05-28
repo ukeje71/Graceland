@@ -35,6 +35,7 @@ const Login = () => {
               Username
             </label>
             <input
+              required
               type="text"
               id="username"
               placeholder="Username or Email"
@@ -48,6 +49,7 @@ const Login = () => {
               Password
             </label>
             <input
+              required
               type="password"
               id="password"
               placeholder="Password"
