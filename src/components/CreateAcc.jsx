@@ -73,7 +73,7 @@ const CreateAcc = () => {
 
           <button
             type="submit"
-            className="mt-4 w-full p-3 rounded-xl bg-[#3b7679] text-white font-semibold hover:bg-[#00767a] transition shadow-md"
+            className="mt-4 w-full p-3 rounded-xl bg-[#fff] text-black font-semibold  shadow-md"
           >
             Submit
           </button>
