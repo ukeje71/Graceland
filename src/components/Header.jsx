@@ -13,7 +13,7 @@ const Header = () => {
   };
 
   return (
-    <div className="bg-white text-[#008F96] font-bold py-4 px-6 w-full sticky top-0 z-50 shadow-sm">
+    <div className="bg-white text-[#008F96] font-bold py-4 px-6 w-full sticky top-0 z-1000 shadow-sm">
       <div className="flex justify-between items-center">
         <img src={logo} alt="logo" className="h-12 w-auto" />
 
@@ -31,7 +31,11 @@ const Header = () => {
         </ul>
 
         <div className="hidden md:flex items-center gap-6">
-          <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
+          <Phone
+            size={35}
+            fill="white"
+            className=" bg-[#008f96] text-white p-2 rounded-full"
+          />
           <ShoppingCart size={30} />
           <button
             onClick={() => navigate("/Login")}
@@ -56,19 +60,19 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-4 space-y-4">
+        <div className="md:hidden mt-4 space-y-4 ">
           <ul className="flex flex-col items-start gap-4">
-            <li>
+            <li className="border-gray-400 w-full border-b-2">
               <NavLink to="/" onClick={toggleMenu}>
                 Home
               </NavLink>
             </li>
-            <li>
+            <li className="border-gray-400 w-full border-b-2">
               <a href="#" onClick={toggleMenu}>
                 About
               </a>
             </li>
-            <li>
+            <li className="border-gray-400 w-full border-b-2">
               <a href="#" onClick={toggleMenu}>
                 Contact
               </a>

@@ -1,8 +1,9 @@
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { FacebookIcon } from "lucide-react";
 import React, { useState } from "react";
 import { auth } from "./Firebase";
 import { Link } from "react-router";
+import { toast } from "react-toastify/unstyled";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -11,11 +12,13 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       console.log(user);
+      toast.success("Successfully Logged In");
     } catch (error) {
       console.log(error.message);
+      toast.error("An error occured from your end");
     }
   };
 
