@@ -14,16 +14,17 @@ Graceland is a modern, responsive e-commerce and service-based website designed 
 
 ## 🧪 Technologies Used
 
-| Technology        | Purpose                                 |
-| ----------------- | --------------------------------------- |
-| **React.js**      | JavaScript library for building UI      |
-| **Tailwind CSS**  | Utility-first CSS framework for styling |
-| **Firebase Auth** | User authentication                     |
-| **React Router**  | Routing and navigation                  |
-| **Lucide React**  | Icon library                            |
-| **Git & GitHub**  | Version control and remote repository   |
-| **Vercel**        | Deployment and hosting                  |
-| **VS Code**       | Code editor                             |
+| Technology         | Purpose                                 |
+| ------------------ | --------------------------------------- |
+| **React.js**       | JavaScript library for building UI      |
+| **Tailwind CSS**   | Utility-first CSS framework for styling |
+| **Firebase Auth**  | User authentication                     |
+| **React Router**   | Routing and navigation                  |
+| **Lucide React**   | Icon library                            |
+| **Git & GitHub**   | Version control and remote repository   |
+| **Vercel**         | Deployment and hosting                  |
+| **VS Code**        | Code editor                             |
+| **React Toastify** | Authentification message/Alerts         |
 
 ## 🚀 Project Structure
 

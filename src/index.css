@@ -12,23 +12,26 @@ body {
 .auto {
   margin: 0 auto;
 }
-.rat{
+.rat {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 50%;
 }
-.rat1{
+.rat1 {
   display: flex;
   align-items: end;
 }
-a.active{
-  color:Black;
+a.active {
+  color: Black;
 }
-h1, h2, h3, button {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+button {
+  font-family: "Poppins", sans-serif;
 }
-.btns:hover{
-background-color: #006f76;
-color: white;
+.btns:hover {
+  background-color: #006f76;
+  color: white;
 }

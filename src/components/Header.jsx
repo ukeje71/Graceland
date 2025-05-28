@@ -1,20 +1,27 @@
+import { useState } from "react";
 import logo from "../assets/logo-bs.png";
-// import { Phone, ShoppingCart } from "lucide-react";
+import { Phone, ShoppingCart, Menu, X } from "lucide-react";
 import trasfer from "../assets/mastercard.png";
 import { NavLink, useNavigate } from "react-router";
 
-
 const Header = () => {
-  const navigate =useNavigate();
-  return (
-    <>
-      <div className=" bg-white text-[#008F96] flex justify-evenly items-center font-bold py-4 px-10 gap-17 w-full sticky top-0 z-50">
-        <img src={logo} alt="logo" className="h-15 w-30" />
-        <ul className="flex items-center gap-10 ">
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className="bg-white text-[#008F96] font-bold py-4 px-6 w-full sticky top-0 z-50 shadow-sm">
+      <div className="flex justify-between items-center">
+        <img src={logo} alt="logo" className="h-12 w-auto" />
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center gap-10">
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
           <li>
             <a href="#">About</a>
           </li>
@@ -22,21 +29,75 @@ const Header = () => {
             <a href="#">Contact</a>
           </li>
         </ul>
-        <span className="flex gap-10 items-center">
-          {/* <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
-          <ShoppingCart size={30} /> */}
-          <button onClick={() => navigate("/Login")} className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
+
+        <div className="hidden md:flex items-center gap-6">
+          <Phone className="h-8 w-8 bg-[#008f96] text-white p-2 rounded-full" />
+          <ShoppingCart size={30} />
+          <button
+            onClick={() => navigate("/Login")}
+            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md"
+          >
             Sign In
           </button>
-          <button onClick={() => navigate("/create")} className="btns border-1 border-gray-400 text-gray-400 px-1 py-2 rounded-[10px] w-[9rem]">
+          <button
+            onClick={() => navigate("/create")}
+            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md"
+          >
             Get Started
           </button>
-          <img src={trasfer} alt="mastercard" width={80} />
-        </span>
+          <img src={trasfer} alt="mastercard" className="w-20" />
+        </div>
+
+        {/* Hamburger Button */}
+        <button className="md:hidden" onClick={toggleMenu}>
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
-    </>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden mt-4 space-y-4">
+          <ul className="flex flex-col items-start gap-4">
+            <li>
+              <NavLink to="/" onClick={toggleMenu}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <a href="#" onClick={toggleMenu}>
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" onClick={toggleMenu}>
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div className="flex flex-col gap-4 mt-4">
+            <button
+              onClick={() => {
+                navigate("/Login");
+                toggleMenu();
+              }}
+              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md"
+            >
+              Sign In
+            </button>
+            <button
+              onClick={() => {
+                navigate("/create");
+                toggleMenu();
+              }}
+              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md"
+            >
+              Get Started
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
 export default Header;
-// #008f96
