@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ChevronDownIcon } from "lucide-react";
 import Bot from "../assets/BotIcon.png"
-import ChatForm from "../components/ChatForm";
-import ChatMessage from "../components/ChatMessage";
+import ChatForm from "./ChatForm";
+import ChatMessage from "./ChatMessage";
 const ChatApp = () => {
 
   const [chatHistory, setChatHistory] = useState([]);

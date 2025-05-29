@@ -6,7 +6,8 @@ import CreateAcc from "./components/CreateAcc";
 import Error from "./components/Error";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
-import ChatApp from "./pages/ChatApp";
+import ChatApp from "./components/ChatApp";
+import Courses from "./components/Courses";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/create" element={<CreateAcc />} />
         <Route path="/chat" element={<ChatApp/>}/>
+        <Route path="/courses" element={<Courses/>}/>
         <Route path="*" element={<Error />} />
       </Routes>
       <ToastContainer

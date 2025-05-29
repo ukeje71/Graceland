@@ -3,7 +3,7 @@ import { FacebookIcon } from "lucide-react";
 import React, { useState } from "react";
 import { auth } from "./Firebase";
 import { Link } from "react-router";
-import { toast } from "react-toastify/unstyled";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -13,9 +13,11 @@ const Login = () => {
     e.preventDefault();
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      console.log(user);
-      toast.success("Successfully Logged In");
+      console.log("Successfully Logged In");
+      toast.success("Successfully Logged In", {
+        position: "top-center",
+      });
+      window.location.href="/courses"
     } catch (error) {
       console.log(error.message);
       toast.error("An error occured from your end");
@@ -39,7 +41,7 @@ const Login = () => {
             </label>
             <input
               required
-              type="text"
+              type="email"
               id="username"
               placeholder="Username or Email"
               onChange={(e) => setEmail(e.target.value)}

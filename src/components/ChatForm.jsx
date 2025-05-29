@@ -37,7 +37,7 @@ const ChatForm = ({ setChatHistory }) => {
               {
                 role: "system",
                 content:
-                  "You are bot, well trained on matters relating to Abia state and Nigeria. Respond helpfully and factually.",
+                  "You are bot, well trained information relating to Grace land Collage,Aba. Respond helpfully and factually.",
               },
               {
                 role: "user",
