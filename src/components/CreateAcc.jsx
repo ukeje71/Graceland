@@ -5,13 +5,13 @@ import { auth, db } from "./Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-
+// import { app } from "./Firebase";
 const CreateAcc = () => {
   const [Fname, setFname] = useState("");
   const [Lname, setLname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  // Default signin
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -33,7 +33,20 @@ const CreateAcc = () => {
       console.log(error.message);
     }
   };
-
+  // Google signin
+  // const signInWithFirebase = () => {
+  //   const google_provider = new app.auth.GoogleAuthProvider();
+  //   app
+  //     .auth()
+  //     .signInWithPopup(google_provider)
+  //     .then((res) => {
+  //       console.log(res);
+  //       toast.success("User Succefully signedin");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <div className="flex justify-center items-center min-h-screen bg-white p-4">
       <div className=" bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-2xl overflow-auto max-h-screen">
@@ -55,7 +68,7 @@ const CreateAcc = () => {
               placeholder="First Name"
               value={Fname}
               onChange={(e) => setFname(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className=" secured outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 
@@ -70,7 +83,7 @@ const CreateAcc = () => {
               placeholder="Last Name"
               value={Lname}
               onChange={(e) => setLname(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className=" secured outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 
@@ -85,7 +98,7 @@ const CreateAcc = () => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className=" secured outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 
@@ -100,7 +113,7 @@ const CreateAcc = () => {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className="secured outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 
@@ -113,7 +126,10 @@ const CreateAcc = () => {
         </form>
 
         <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
-          <button className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white">
+          <button
+            className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white"
+            // onClick={signInWithFirebase}
+          >
             <span className="font-extrabold text-3xl text-[#3b5998]">G</span>
             <span className="text-black font-medium"> Google</span>
           </button>
@@ -125,7 +141,7 @@ const CreateAcc = () => {
         </div>
 
         <Link to={"/Login"}>
-          <p className="pt-6 text-center text-black underline text-sm">
+          <p className="pt-6 text-center text-white underline text-sm">
             Already have an account? Sign in
           </p>
         </Link>

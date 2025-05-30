@@ -17,7 +17,7 @@ const Login = () => {
       toast.success("Successfully Logged In", {
         position: "top-center",
       });
-      window.location.href="/courses"
+      window.location.href = "/courses";
     } catch (error) {
       console.log(error.message);
       toast.error("An error occured from your end");
@@ -45,7 +45,7 @@ const Login = () => {
               id="username"
               placeholder="Username or Email"
               onChange={(e) => setEmail(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className="secured  outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 
@@ -59,7 +59,7 @@ const Login = () => {
               id="password"
               placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
-              className="outline-none border-2 rounded-lg p-2"
+              className="secured  outline-none border-2 rounded-lg p-2"
             />
           </fieldset>
 

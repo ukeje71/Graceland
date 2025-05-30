@@ -15,8 +15,10 @@ const Cards = ({
 }) => {
   return (
     <div className="shadow-2xl rounded-2xl  h-full w-full mb-8">
-      {image && (
-        <img src={image} alt="Img" className="w-full h-[40%] rounded-t-2xl" />
+      {image &&  (
+        <span  className="h-full">
+        <img src={image} alt="Img" className="w-full rounded-t-2xl h-65 " />
+        </span>
       )}
       <div className="text-[#4c6288] px-5  rat">
         {name && <h2 className="text-2xl font-bold pt-4">{name}</h2>}
@@ -40,7 +42,7 @@ const Cards = ({
         )}
         {/* ONLY SHOW THIS IF icon2 OR icon3 EXISTS */}
         {(icon2 || icon3) && (
-          <div className="flex justify-between mt-5 rat1">
+          <div className="flex justify-between mb-5 mt-5 rat1">
             <span className="bg-gray-300 text-gray-600 rounded-full flex items-center px-4 py-2 gap-2">
               {icon2}
               <p className="">{txt1}</p>

@@ -678,7 +678,7 @@ const Landing = () => {
       <section className="mt-20 bg-[#008F96]    py-16 px-4 lg:px-20 overflow-x-hidden m-3 md:m-16 rounded-2xl text-white flex flex-col md:flex-row items-center gap-10">
         <div className="w-full ">
           <h2 className="text-2xl mb-4 font-bold">Accredicted By</h2>
-          <p className="w-90 ">
+          <p className="md:w-90 text-justify ">
             Graceland Business School is accredited by QAHE. QAHE is a
             non-governmental, independent quality assurance agency in education
             and training, which is recognised by National Agency for Quality
