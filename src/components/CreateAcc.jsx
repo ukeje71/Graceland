@@ -5,7 +5,7 @@ import { auth, db } from "./Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
-// import { app } from "./Firebase";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 const CreateAcc = () => {
   const [Fname, setFname] = useState("");
   const [Lname, setLname] = useState("");
@@ -34,19 +34,27 @@ const CreateAcc = () => {
     }
   };
   // Google signin
-  // const signInWithFirebase = () => {
-  //   const google_provider = new app.auth.GoogleAuthProvider();
-  //   app
-  //     .auth()
-  //     .signInWithPopup(google_provider)
-  //     .then((res) => {
-  //       console.log(res);
-  //       toast.success("User Succefully signedin");
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
+const signInWithFirebase = () => {
+  const provider = new GoogleAuthProvider();
+  signInWithPopup(auth, provider)
+    .then(async (res) => {
+      console.log(res);
+      toast.success("User successfully signed in");
+
+      // Optional: Store user data in Firestore
+      const user = res.user;
+      await setDoc(doc(db, "Users", user.uid), {
+        email: user.email,
+        firstname: user.displayName?.split(" ")[0] || "",
+        lastname: user.displayName?.split(" ")[1] || "",
+        provider: "google",
+      });
+    })
+    .catch((err) => {
+      console.log(err.message);
+      toast.error("Google sign-in failed");
+    });
+};
   return (
     <div className="flex justify-center items-center min-h-screen bg-white p-4">
       <div className=" bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-2xl overflow-auto max-h-screen">
@@ -128,7 +136,7 @@ const CreateAcc = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
           <button
             className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white"
-            // onClick={signInWithFirebase}
+            onClick={signInWithFirebase}
           >
             <span className="font-extrabold text-3xl text-[#3b5998]">G</span>
             <span className="text-black font-medium"> Google</span>

@@ -1,9 +1,11 @@
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { FacebookIcon } from "lucide-react";
 import React, { useState } from "react";
-import { auth } from "./Firebase";
+import { auth, db } from "./Firebase";
 import { Link } from "react-router";
 import { toast } from "react-toastify";
+import { GoogleAuthProvider } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
 
 const Login = () => {
   const [password, setPassword] = useState("");
@@ -23,7 +25,28 @@ const Login = () => {
       toast.error("An error occured from your end");
     }
   };
-
+const signInWithFirebase =()=>{
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(async (res) => {
+        console.log(res);
+        toast.success("User successfully signed in");
+        window.location.href = "/courses";
+  
+        // Optional: Store user data in Firestore
+        const user = res.user;
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          firstname: user.displayName?.split(" ")[0] || "",
+          lastname: user.displayName?.split(" ")[1] || "",
+          provider: "google",
+        });
+      })
+      .catch((err) => {
+        console.log(err.message);
+        toast.error("Google sign-in failed");
+      });
+}
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-lg overflow-auto max-h-screen">
@@ -72,7 +95,7 @@ const Login = () => {
         </form>
 
         <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
-          <button className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white">
+          <button className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white" onClick={signInWithFirebase}>
             <span className="font-extrabold text-3xl text-[#3b5998]">G</span>
             <span className="text-black font-medium"> Google</span>
           </button>

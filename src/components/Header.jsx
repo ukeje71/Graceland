@@ -39,13 +39,13 @@ const Header = () => {
           <ShoppingCart size={30} />
           <button
             onClick={() => navigate("/Login")}
-            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md"
+            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md hover:bg-[#008F96] hover:text-white transition cursor-pointer"
           >
             Sign In
           </button>
           <button
             onClick={() => navigate("/create")}
-            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md"
+            className="border border-gray-400 text-gray-400 px-3 py-2 rounded-md hover:bg-[#008F96] hover:text-white transition cursor-pointer"
           >
             Get Started
           </button>
@@ -84,7 +84,7 @@ const Header = () => {
                 navigate("/Login");
                 toggleMenu();
               }}
-              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md"
+              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md "
             >
               Sign In
             </button>
@@ -93,7 +93,7 @@ const Header = () => {
                 navigate("/create");
                 toggleMenu();
               }}
-              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md"
+              className="border border-gray-400 text-gray-400 px-4 py-2 rounded-md "
             >
               Get Started
             </button>

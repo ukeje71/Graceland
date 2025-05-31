@@ -12,7 +12,7 @@ import {
   ArrowRight,
   DollarSign,
   Star,
-  MessageCircleQuestionIcon,
+  MessageCircleMoreIcon,
 } from "lucide-react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -24,11 +24,16 @@ const Landing = () => {
   const navigate = useNavigate();
   return (
     <div className="overflow-x-hidden">
-      <span className="  fixed bottom-10 right-5 z-500 ">
-        <Link to={"/chat"}>
-          <MessageCircleQuestionIcon size={50} fill="white" className="text-[#008F96]  " />
-        </Link>
-      </span>
+      <Link to={"/chat"}>
+        <span className="flex flex-row items-center bg-white  p-3  rounded-2xl fixed bottom-5 right-5 z-500 gap-5">
+          <MessageCircleMoreIcon
+            size={50}
+            fill="white"
+            className="text-[#008F96]  "
+          />
+          <p className="hidden md:block lg:uppercase lg:font-extrabold text-2xl text-[#008F96] ">Chat</p>
+        </span>
+      </Link>
       {/* Hero */}
       <section className=" relative bg-gray-600 flex items-center h-100 md:h-full">
         <span className="absolute text-white max-w-xl font-bold px-6 md:px-20 py-10">
@@ -41,7 +46,7 @@ const Landing = () => {
             journey.
           </p>
           <button
-            onClick={()=>navigate("/create")}
+            onClick={() => navigate("./create")}
             className="bg-white px-8 py-2 text-[#008f96] rounded-xl"
           >
             Get started
@@ -55,7 +60,7 @@ const Landing = () => {
       </section>
 
       {/* Courses */}
-      <section className="max-w-7xl mx-auto pt-16 px-4">
+      <section className="max-w-7xl mt-16 py-16 px-4 lg:px-20">
         <h2 className="font-bold text-[#4c6288] text-4xl pb-5 uppercase">
           Our Offerings
         </h2>
@@ -208,7 +213,7 @@ const Landing = () => {
       </section>
 
       {/* Why Us */}
-      <section className="max-w-7xl mx-auto pt-16 px-4">
+      <section className="max-w-7xl mx-auto pt-16 px-4 ">
         <h2 className="text-3xl md:text-5xl font-bold text-[#4c6288] mb-8 p-7">
           Why Graceland?
         </h2>
