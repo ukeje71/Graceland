@@ -27,8 +27,8 @@ const ChatForm = ({ setChatHistory }) => {
           headers: {
             // Authorization: `Bearer ${import.meta.env.VITE_APIKEY}`,
             Authorization: `Bearer ${import.meta.env.VITE_APIKEY}`,
-            "HTTP-Referer": "https://affriverse-solution.vercel.app/", // Replace with your live site URL
-            "X-Title": "My Civic Chatbot",
+            "HTTP-Referer": "https://graceland-delta.vercel.app/chat", // Replace with your live site URL
+            "X-Title": "Graceland Chatbot",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({

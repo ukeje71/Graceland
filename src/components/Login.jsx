@@ -22,17 +22,24 @@ const Login = () => {
       window.location.href = "/courses";
     } catch (error) {
       console.log(error.message);
-      toast.error("An error occured from your end");
+      toast.dismiss(); // Prevent multiple toasts
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("This email is already registered");
+      } else if (error.code === "auth/invalid-email") {
+        toast.error("Invalid email format");
+      } else {
+        toast.error("Something went wrong");
+      }
     }
   };
-const signInWithFirebase =()=>{
+  const signInWithFirebase = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then(async (res) => {
         console.log(res);
         toast.success("User successfully signed in");
         window.location.href = "/courses";
-  
+
         // Optional: Store user data in Firestore
         const user = res.user;
         await setDoc(doc(db, "Users", user.uid), {
@@ -46,7 +53,7 @@ const signInWithFirebase =()=>{
         console.log(err.message);
         toast.error("Google sign-in failed");
       });
-}
+  };
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white p-4">
       <div className="bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-lg overflow-auto max-h-screen">
@@ -95,7 +102,10 @@ const signInWithFirebase =()=>{
         </form>
 
         <div className="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
-          <button className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white" onClick={signInWithFirebase}>
+          <button
+            className="flex justify-center items-center gap-3 shadow-md p-3 rounded-xl w-full sm:w-60 bg-white"
+            onClick={signInWithFirebase}
+          >
             <span className="font-extrabold text-3xl text-[#3b5998]">G</span>
             <span className="text-black font-medium"> Google</span>
           </button>

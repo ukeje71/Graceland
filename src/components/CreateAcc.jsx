@@ -29,32 +29,39 @@ const CreateAcc = () => {
         });
       }
     } catch (error) {
-      toast.error("An error occurred from your end");
+      toast.dismiss(); // Prevent multiple toasts
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("This email is already registered");
+      } else if (error.code === "auth/invalid-email") {
+        toast.error("Invalid email format");
+      } else {
+        toast.error("Something went wrong");
+      }
       console.log(error.message);
     }
   };
   // Google signin
-const signInWithFirebase = () => {
-  const provider = new GoogleAuthProvider();
-  signInWithPopup(auth, provider)
-    .then(async (res) => {
-      console.log(res);
-      toast.success("User successfully signed in");
+  const signInWithFirebase = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then(async (res) => {
+        console.log(res);
+        toast.success("User successfully signed in");
 
-      // Optional: Store user data in Firestore
-      const user = res.user;
-      await setDoc(doc(db, "Users", user.uid), {
-        email: user.email,
-        firstname: user.displayName?.split(" ")[0] || "",
-        lastname: user.displayName?.split(" ")[1] || "",
-        provider: "google",
+        // Optional: Store user data in Firestore
+        const user = res.user;
+        await setDoc(doc(db, "Users", user.uid), {
+          email: user.email,
+          firstname: user.displayName?.split(" ")[0] || "",
+          lastname: user.displayName?.split(" ")[1] || "",
+          provider: "google",
+        });
+      })
+      .catch((err) => {
+        console.log(err.message);
+        toast.error("Google sign-in failed");
       });
-    })
-    .catch((err) => {
-      console.log(err.message);
-      toast.error("Google sign-in failed");
-    });
-};
+  };
   return (
     <div className="flex justify-center items-center min-h-screen bg-white p-4">
       <div className=" bg-[#008f96] w-full max-w-md p-6 rounded-xl shadow-2xl overflow-auto max-h-screen">
