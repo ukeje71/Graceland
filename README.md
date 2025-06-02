@@ -25,6 +25,7 @@ Graceland is a modern, responsive e-commerce and service-based website designed 
 | **Vercel**         | Deployment and hosting                  |
 | **VS Code**        | Code editor                             |
 | **React Toastify** | Authentification message/Alerts         |
+| **Axios**          | HTTP client for making API requests     |
 
 ## 🚀 Project Structure
 
