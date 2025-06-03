@@ -20,6 +20,7 @@ const CreateAcc = () => {
       console.log(user);
       console.log("User Successfully Created");
       toast.success("User Successfully Created");
+      window.location.href = "/Login";
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
@@ -30,8 +31,8 @@ const CreateAcc = () => {
       }
     } catch (error) {
       toast.dismiss(); // Prevent multiple toasts
-      if (error.code === "auth/email-already-in-use") {
-        toast.error("This email is already registered");
+      if (error.code === "auth/invalid-credential") {
+        toast.error("User not found");
       } else if (error.code === "auth/invalid-email") {
         toast.error("Invalid email format");
       } else {
