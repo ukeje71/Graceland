@@ -1,5 +1,3 @@
-// Import the functions you need from the SDKs you need
-// import firebase from 'firebase'
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -13,9 +11,9 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+export const auth = getAuth(app); // Fixed: Added app instance
 export const db = getFirestore(app);
-// firebase.initializeApp(firebaseConfig);
 export default app;

@@ -19,7 +19,7 @@ const Login = () => {
       toast.success("Successfully Logged In", {
         position: "top-center",
       });
-      window.location.href = "/courses";
+      window.location.href = "/blogs";
     } catch (error) {
       console.log(error.message);
       toast.dismiss(); // Prevent multiple toasts
@@ -38,7 +38,7 @@ const Login = () => {
       .then(async (res) => {
         console.log(res);
         toast.success("User successfully signed in");
-        window.location.href = "/courses";
+        window.location.href = "/blogs";
 
         // Optional: Store user data in Firestore
         const user = res.user;

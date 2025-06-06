@@ -47,7 +47,8 @@ const CreateAcc = () => {
     signInWithPopup(auth, provider)
       .then(async (res) => {
         console.log(res);
-        toast.success("User successfully signed in");
+        toast.success("User successfully created");
+        window.location.href = "/Login";
 
         // Optional: Store user data in Firestore
         const user = res.user;
