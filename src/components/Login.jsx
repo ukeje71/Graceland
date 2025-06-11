@@ -2,12 +2,13 @@ import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { FacebookIcon } from "lucide-react";
 import React, { useState } from "react";
 import { auth, db } from "./Firebase";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
 const Login = () => {
+  const navigate =useNavigate();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
 
@@ -19,7 +20,7 @@ const Login = () => {
       toast.success("Successfully Logged In", {
         position: "top-center",
       });
-      window.location.href = "/blogs";
+      navigate("/blogs");
     } catch (error) {
       console.log(error.message);
       toast.dismiss(); // Prevent multiple toasts

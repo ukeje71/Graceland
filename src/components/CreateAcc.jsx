@@ -1,12 +1,14 @@
 import { FacebookIcon } from "lucide-react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { useState } from "react";
 import { auth, db } from "./Firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+
 const CreateAcc = () => {
+  const navigate =useNavigate();
   const [Fname, setFname] = useState("");
   const [Lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -20,7 +22,7 @@ const CreateAcc = () => {
       console.log(user);
       console.log("User Successfully Created");
       toast.success("User Successfully Created");
-      window.location.href = "/Login";
+      navigate("/Login");
       if (user) {
         await setDoc(doc(db, "Users", user.uid), {
           email: user.email,
