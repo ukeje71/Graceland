@@ -39,7 +39,7 @@ const Login = () => {
       .then(async (res) => {
         console.log(res);
         toast.success("User successfully signed in");
-        window.location.href = "/blogs";
+        navigate("/blogs");
 
         // Optional: Store user data in Firestore
         const user = res.user;
